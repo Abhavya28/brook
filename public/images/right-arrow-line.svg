@@ -1,0 +1,16 @@
+<svg
+  width="9"
+  height="16"
+  viewBox="0 0 9 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  className="text-black"
+>
+  <path
+    d="M0.9 0.9L7.9 7.9L0.9 14.9"
+    stroke="currentColor" 
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
