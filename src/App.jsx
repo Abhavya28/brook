@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext"; 
 
 import Home from "./pages/Home";
-import Contact from "./pages/contact";
+import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import Navbar from "./layouts/Navbar";
 import Footer from "./layouts/Footer";

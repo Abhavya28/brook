@@ -319,7 +319,6 @@ const Shop = () => {
               </div>
             </div>
 
-            {/* HOVER OVERLAY (DESKTOP ONLY) */}
             <div className="absolute inset-0 bg-black/50 opacity-0 transition md:group-hover:opacity-100 group-active:opacity-100 flex flex-col items-center justify-center gap-6">
               <button
                 onClick={() => addToCart(product)}
