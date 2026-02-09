@@ -12,3 +12,22 @@
 body {
   font-family: "Poppins";
 }
+
+.inspiration-swiper .swiper-button-next,
+.inspiration-swiper .swiper-button-prev {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #b88e2f;
+}
+
+.inspiration-swiper .swiper-button-next::after,
+.inspiration-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inspiration-swiper .swiper-button-next:hover,
+.inspiration-swiper .swiper-button-prev:hover {
+  color: #9f7a1f;
+}
