@@ -16,6 +16,11 @@ A fully responsive React.js ecommerce platform featuring dynamic product search,
 
 ---
 
+## 🌍 Live Demo
+👉 [Brook Website](https://brook-tau.vercel.app/)
+
+---
+
 ## 🚀 Features
 
 - Fully responsive design for all screen sizes  
@@ -37,4 +42,11 @@ A fully responsive React.js ecommerce platform featuring dynamic product search,
 
 ---
 
+## 👩‍💻 Author
+**Abhavya Gupta**  
+B.Tech CSE | Full-Stack Developer  
+
+🔗 [GitHub Profile](https://github.com/Abhavya28)  
+
+---
 
