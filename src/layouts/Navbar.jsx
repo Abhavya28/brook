@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useCart } from "../context/CartContext";
 import { useSearch } from "../context/SearchContext";
 import CartSidebar from "./CartSidebar";
 import SearchSuggestions from "../layouts/SearchSuggestions";
+import { useSelector } from "react-redux";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,13 +20,12 @@ const navIcons = [
 ];
 
 const Navbar = () => {
-  const { cart } = useCart();
+  const cartItems = useSelector((state) => state.cart.cart);
   const { searchTerm, setSearchTerm, isSearchOpen, setIsSearchOpen } =
     useSearch();
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // 🔹 MOBILE MENU STATE
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const location = useLocation();
@@ -34,7 +33,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsSearchOpen(false);
-    setIsMobileMenuOpen(false); // close mobile menu on route change
+    setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
   return (
@@ -88,9 +87,9 @@ const Navbar = () => {
                   className="w-6 h-6 hover:scale-110 transition"
                 />
 
-                {item.type === "cart" && cart.length > 0 && (
+                {item.type === "cart" && cartItems.length > 0 && (
                   <span className="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                    {cart.length}
+                    {cartItems.length}
                   </span>
                 )}
               </button>
@@ -141,9 +140,9 @@ const Navbar = () => {
                 >
                   <img src={item.icon} alt="" className="w-6 h-6" />
 
-                  {item.type === "cart" && cart.length > 0 && (
+                  {item.type === "cart" && cartItems.length > 0 && (
                     <span className="absolute -top-1 -right-1 bg-primary text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-                      {cart.length}
+                      {cartItems.length}
                     </span>
                   )}
                 </button>

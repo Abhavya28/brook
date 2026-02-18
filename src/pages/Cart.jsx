@@ -1,7 +1,13 @@
-import { useCart } from "../context/CartContext";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  increaseQty,
+  decreaseQty,
+  removeFromCart
+} from '../features/cart/cartSlice'
 
 const Cart = () => {
-  const { cart, increaseQty, decreaseQty, removeFromCart } = useCart();
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart.cart);
 
   if (cart.length === 0) {
     return (
@@ -11,17 +17,18 @@ const Cart = () => {
     );
   }
 
+  
+
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
 
       <div className="space-y-6">
-        {cart.map((item) => (
+        {cart.map(item => (
           <div
             key={item.id}
             className="flex items-center justify-between border-b pb-4"
           >
-
             <div className="flex items-center gap-6">
               <img
                 src={item.image}
@@ -35,10 +42,9 @@ const Cart = () => {
               </div>
             </div>
 
-
             <div className="flex items-center gap-4">
               <button
-                onClick={() => decreaseQty(item.id)}
+                onClick={() => dispatch(decreaseQty(item.id))}
                 className="w-8 h-8 border flex items-center justify-center"
               >
                 -
@@ -47,16 +53,15 @@ const Cart = () => {
               <span className="font-semibold">{item.qty}</span>
 
               <button
-                onClick={() => increaseQty(item.id)}
+                onClick={() => dispatch(increaseQty(item.id))}
                 className="w-8 h-8 border flex items-center justify-center"
               >
                 +
               </button>
             </div>
 
-
             <button
-              onClick={() => removeFromCart(item.id)}
+              onClick={() => dispatch(removeFromCart(item.id))}
               className="text-red-500 font-semibold"
             >
               Remove

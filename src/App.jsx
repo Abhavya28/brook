@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { CartProvider } from "./context/CartContext"; 
 
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -11,7 +10,7 @@ import Product from "./pages/Product";
 
 function App() {
   return (
-    <CartProvider> 
+    <> 
       <Navbar />
 
       <Routes>
@@ -23,7 +22,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </CartProvider>
+    </>
   );
 }
 
